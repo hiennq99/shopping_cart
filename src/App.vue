@@ -1,23 +1,22 @@
 <template>
     <div id="app">
-        <img src="./assets/logo.png" />
-        <router-view />
+        <component :is="layout"></component>
     </div>
 </template>
 
 <script>
+import Default from "@/layouts/Default";
 export default {
-    name: "App"
+    name: "App",
+    components: {
+        Default
+    },
+    computed: {
+        layout() {
+            return this.$route.meta.layout || "Default";
+        }
+    }
 };
 </script>
 
-<style lang="scss">
-#app {
-    font-family: "Avenir", Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-}
-</style>
+<style lang="scss"></style>
