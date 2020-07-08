@@ -9,6 +9,13 @@
 6. [ConfirmOrder] (http://anon.wp1.zootemplate.com/checkout/order-received/1705/?key=wc_order_jbRi44A5wHVWP)
 7. [Contact] (http://anon.wp1.zootemplate.com/contact/)
 8. [About] (http://anon.wp1.zootemplate.com/about/)
+
+### FAKE API
+node src/utils/faker.js > db.json
+
+### BUILD FAKE API
+json-server --watch db.json
+
 # shopping_cart
 
 > A Vue.js project
