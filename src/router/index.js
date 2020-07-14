@@ -14,14 +14,14 @@ export default new Router({
             component: Home
         },
         {
+            path: "/products",
+            name: "ListProduct",
+            component: ListProduct
+        },
+        {
             path: "*",
             name: "NotFound",
             component: NotFound
         },
-        {
-            path: "/products",
-            name: "ListProduct",
-            component: ListProduct
-        }
     ]
 });
