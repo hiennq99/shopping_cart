@@ -13,18 +13,17 @@ export default {
         };
     },
     async created() {
-        await this.fetchData(this.$route.query);
+        this.fetchData(this.$route.query).then(resp => {
+            console.log(resp);
+        });
     },
     methods: {
         ...mapActions({
-            getProductList: "product/getProductList"
+            getProductList: "product/getProductList",
+            getCategories: "product/getCategories",
         }),
-        async fetchData(query) {
-            const data = await this.getProductList(query);
-
-            if (data) {
-                this.productList = data.data;
-            }
+        fetchData(query) {
+            return Promise.all([this.getProductList(query), this.getCategories(query)]);
         }
     }
 };

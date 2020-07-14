@@ -9,11 +9,16 @@ const mockApi = () => {
             content: faker.random.words(),
             price: faker.random.number(),
             rating: Math.floor(Math.random() * 100 + 1) / 10
+        },
+        categories: {
+            id: Math.floor(Math.random()*20),
+            name: faker.random.words(),
         }
     };
 };
 const db = {
-    products: []
+    products: [],
+    categories: []
 };
 const getFakeData = (db, mockApi, numberRecord) => {
     Object.keys(db).forEach(api => {
