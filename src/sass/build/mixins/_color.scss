@@ -1,0 +1,30 @@
+// Text color
+@mixin text-simple($name, $color) {
+    #{$name} {
+        color: $color !important;
+    }
+    a#{$name},
+    button#{$name} {
+        color: $color !important;
+    }
+    @include hover-focus($name, $color, 15%)
+}
+
+// Background color
+@mixin bg-simple($name, $color) {
+    #{$name} {
+        background-color: $color !important;
+    }
+    a#{$name},
+    button#{$name} {
+        background-color: $color !important;
+    }
+}
+
+@mixin hover-focus($name, $color, $amount: 15%) {
+    a#{$name}:hover,
+    button#{$name}:hover {
+        transition: background-color 0.3s ease;
+        background-color: darken($color, $amount) !important;
+    }
+}

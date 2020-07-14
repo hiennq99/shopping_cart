@@ -1,0 +1,9 @@
+// theme colors
+@each $key, $value in $theme-colors {
+    @include bg-simple(".bg-#{$key}", $value);
+    @include text-simple(".text-#{$key}", $value);
+}
+
+@function color($key: "blue") {
+    @return map-get($colors, $key);
+}
