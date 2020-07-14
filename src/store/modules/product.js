@@ -16,7 +16,17 @@ const actions = {
         } catch (error) {
             return { error };
         }
-    }
+    },
+    async getCategories(ctx, params) {
+        try {
+            const response = await this.$axios.get(apis.category, {
+                params
+            });
+            return response;
+        } catch (error) {
+            return { error };
+        }
+    },
 };
 
 export default {
