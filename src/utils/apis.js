@@ -1,4 +1,5 @@
 export default {
     productList: "/products",
-    category: "/categories"
+    category: "/categories",
+    login: '/login/google'
 };
