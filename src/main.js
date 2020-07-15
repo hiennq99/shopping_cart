@@ -10,7 +10,7 @@ import axios from "@/utils/axios";
 Vue.prototype.$axios = axios;
 
 // i18n
-import i18n from '@/utils/i18n'
+import i18n from "@/utils/i18n";
 
 new Vue({
     el: "#app",

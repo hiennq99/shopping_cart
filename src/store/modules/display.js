@@ -1,12 +1,12 @@
 const state = {
-    isLoading: false
+    loading: false
 };
 
 const getters = {};
 
 const mutations = {
     setLoading(state, data) {
-        state.isLoading = data;
+        state.loading = data;
     }
 };
 

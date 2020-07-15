@@ -1,25 +1,40 @@
 <template>
-    <div>
-        <div id="google-signin-btn"></div>
-    </div>
+    <GoogleLogin
+        :params="params"
+        :onSuccess="onSuccess"
+        :renderParams="renderParams"
+    >
+        Login with Google
+    </GoogleLogin>
 </template>
 
 <script>
+import GoogleLogin from "vue-google-login";
 import { mapActions } from "vuex";
 
 export default {
+    components: {
+        GoogleLogin
+    },
+    data() {
+        return {
+            params: {
+                client_id: process.env.GOOGLE_CLIENT_ID
+            },
+            renderParams: {
+                width: 200,
+                height: 40,
+                longtitle: true
+            }
+        };
+    },
     methods: {
         ...mapActions({
             login: "authenticate/login"
         }),
-        async onSignIn(googleUser) {
-            await this.login(googleUser.getAuthResponse().access_token)
+        async onSuccess(googleUser) {
+            await this.login(googleUser.getAuthResponse().access_token);
         }
-    },
-    mounted() {
-        gapi.signin2.render("google-signin-btn", {
-            onsuccess: this.onSignIn
-        });
     }
 };
 </script>
