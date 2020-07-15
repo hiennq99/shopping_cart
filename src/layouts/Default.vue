@@ -1,17 +1,22 @@
 <template>
-    <div class="py-5 px-5">
+    <div class="">
         <div class="columns">
-            <div class="column is-one-quarter">
-                <aside class="menu">
+            <div class="column is-one-quarter has-background-light">
+                <aside class="menu px-5">
+                    <div class="pt-5">
+                        <select-language></select-language>
+                    </div>
                     <p class="menu-label">
-                        General
+                        {{ $t("general") }}
                     </p>
                     <ul class="menu-list">
                         <li>
-                            <router-link to="/">Home</router-link>
+                            <router-link to="/">{{ $t("home") }}</router-link>
                         </li>
                         <li>
-                            <router-link to="/products">Products</router-link>
+                            <router-link to="/products">{{
+                                $t("product")
+                            }}</router-link>
                         </li>
                     </ul>
                 </aside>
@@ -24,7 +29,11 @@
 </template>
 
 <script>
+import SelectLanguage from "@/components/SelectLanguage";
 export default {
+    components: {
+        SelectLanguage
+    }
 };
 </script>
 
