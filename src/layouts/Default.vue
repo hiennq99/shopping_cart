@@ -18,6 +18,11 @@
                                 $t("product")
                             }}</router-link>
                         </li>
+                        <li>
+                            <router-link to="/login">{{
+                                $t("login")
+                            }}</router-link>
+                        </li>
                     </ul>
                 </aside>
             </div>
