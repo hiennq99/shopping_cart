@@ -6,17 +6,23 @@
                     v-for="(lang, i) in langs"
                     :key="`Lang${i}`"
                     :value="lang"
-                    >{{ lang }}</option
-                >
+                    >{{ lang }}
+                </option>
             </select>
         </div>
     </div>
 </template>
 
 <script>
+import { mapMutations } from "vuex";
 export default {
     data() {
         return { langs: ["vi", "en"] };
+    },
+    methods: {
+        ...mapMutations({
+            setLanguage: "display/setLanguage"
+        })
     }
 };
 </script>

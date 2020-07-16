@@ -10,9 +10,9 @@ import axios from "@/utils/axios";
 Vue.prototype.$axios = axios;
 
 // i18n
-import i18n from "@/utils/i18n";
+import i18n from "@/utils/i18n-lazy";
 
-new Vue({
+const app = new Vue({
     el: "#app",
     router,
     store,
@@ -20,3 +20,5 @@ new Vue({
     components: { App },
     template: "<App/>"
 });
+
+export default app;

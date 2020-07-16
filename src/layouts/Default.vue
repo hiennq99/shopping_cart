@@ -7,11 +7,17 @@
                         <select-language></select-language>
                     </div>
                     <p class="menu-label">
-                        {{ $t("general") }}
+                        Genaral
                     </p>
                     <ul class="menu-list">
                         <li>
-                            <router-link to="/">{{ $t("home") }}</router-link>
+                            <router-link
+                                :to="{
+                                    name: 'Home',
+                                    params: { lang: $i18n.locale }
+                                }"
+                                >{{ $t("home") }}</router-link
+                            >
                         </li>
                         <li>
                             <router-link to="/products">{{
@@ -41,5 +47,3 @@ export default {
     }
 };
 </script>
-
-<style></style>
