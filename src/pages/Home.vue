@@ -1,5 +1,6 @@
 <template>
-    <div class="">
+    <section class="container">
         <h1>Home</h1>
-    </div>
+        <p>{{ $t("hello") }}</p>
+    </section>
 </template>

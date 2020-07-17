@@ -30,7 +30,9 @@
                 </aside>
             </div>
             <div class="column">
-                <router-view></router-view>
+                <section class="section">
+                    <router-view></router-view>
+                </section>
             </div>
         </div>
     </div>
