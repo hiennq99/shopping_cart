@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
+import { loadLanguageAsync } from "@/utils/i18n-lazy.js";
 
 const load = component => {
     return () => System.import(`@/pages/${component}.vue`);
@@ -7,27 +8,34 @@ const load = component => {
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
     routes: [
         {
-            path: "/",
+            path: "/:lang",
             name: "Home",
             component: load("Home")
         },
         {
-            path: "/products",
+            path: "/:lang/products",
             name: "ListProduct",
             component: load("ListProduct")
         },
         {
-            path: "/login",
+            path: "/:lang/login",
             name: "Login",
             component: load("Login")
         },
         {
             path: "*",
             name: "NotFound",
-            component: load("NotFound")
+            component: load("404")
         }
     ]
 });
+
+router.beforeEach((to, from, next) => {
+    const lang = to.params.lang || process.env.VUE_APP_I18N_LOCALE || "vi";
+    loadLanguageAsync(lang).then(() => next());
+});
+
+export default router;

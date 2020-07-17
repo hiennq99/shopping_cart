@@ -1,7 +1,9 @@
 {
-    "hello": "Xin chào!",
-    "general": "Chung",
-    "home": "Trang chủ",
-    "product": "Sản phẩm",
-    "login": "Đăng nhập"
+    "hello": "Hê lâu",
+    "nav": {
+        "home": "Trang chủ",
+        "product": "Sản phẩm",
+        "login": "Đăng nhập",
+        "general": "Chung"
+    }
 }

@@ -7,20 +7,23 @@
                         <select-language></select-language>
                     </div>
                     <p class="menu-label">
-                        {{ $t("general") }}
+                        {{ $t("nav.general") }}
                     </p>
                     <ul class="menu-list">
                         <li>
-                            <router-link to="/">{{ $t("home") }}</router-link>
-                        </li>
-                        <li>
-                            <router-link to="/products">{{
-                                $t("product")
+                            <router-link :to="$i18nRoute({ name: 'Home' })">{{
+                                $t("nav.home")
                             }}</router-link>
                         </li>
                         <li>
-                            <router-link to="/login">{{
-                                $t("login")
+                            <router-link
+                                :to="$i18nRoute({ name: 'ListProduct' })"
+                                >{{ $t("nav.product") }}</router-link
+                            >
+                        </li>
+                        <li>
+                            <router-link :to="$i18nRoute({ name: 'Login' })">{{
+                                $t("nav.login")
                             }}</router-link>
                         </li>
                     </ul>
@@ -41,5 +44,3 @@ export default {
     }
 };
 </script>
-
-<style></style>

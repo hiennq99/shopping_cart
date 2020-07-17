@@ -1,7 +1,9 @@
 {
     "hello": "Hello",
-    "general": "General",
-    "home": "Home",
-    "product": "Product",
-    "login": "Login"
+    "nav": {
+        "home": "Home",
+        "product": "Product",
+        "login": "Login",
+        "general": "General"
+    }
 }
