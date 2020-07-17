@@ -1,11 +1,13 @@
 <template>
-    <GoogleLogin
-        :params="params"
-        :onSuccess="onSuccess"
-        :renderParams="renderParams"
-    >
-        Login with Google
-    </GoogleLogin>
+    <div class="container">
+        <GoogleLogin
+            :params="params"
+            :onSuccess="onSuccess"
+            :renderParams="renderParams"
+        >
+            Login with Google
+        </GoogleLogin>
+    </div>
 </template>
 
 <script>
@@ -38,5 +40,3 @@ export default {
     }
 };
 </script>
-
-<style></style>

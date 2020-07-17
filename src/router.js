@@ -1,9 +1,9 @@
 import Vue from "vue";
 import Router from "vue-router";
-import { loadLanguageAsync } from "@/utils/i18n-lazy.js";
+import { loadLanguageAsync } from "@/utils/i18n.js";
 
 const load = component => {
-    return () => System.import(`@/pages/${component}.vue`);
+    return () => import(`@/pages/${component}.vue`);
 };
 
 Vue.use(Router);

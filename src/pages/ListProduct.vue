@@ -1,7 +1,7 @@
 <template>
-    <div>
-        list product
-    </div>
+    <section class="container">
+        <h1>List Product</h1>
+    </section>
 </template>
 
 <script>
@@ -20,13 +20,14 @@ export default {
     methods: {
         ...mapActions({
             getProductList: "product/getProductList",
-            getCategories: "product/getCategories",
+            getCategories: "product/getCategories"
         }),
         fetchData(query) {
-            return Promise.all([this.getProductList(query), this.getCategories(query)]);
+            return Promise.all([
+                this.getProductList(query),
+                this.getCategories(query)
+            ]);
         }
     }
 };
 </script>
-
-<style></style>

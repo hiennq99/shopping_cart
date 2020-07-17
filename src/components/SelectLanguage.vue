@@ -15,7 +15,7 @@
 
 <script>
 import { mapMutations } from "vuex";
-import { loadLanguageAsync } from "@/utils/i18n-lazy";
+import { loadLanguageAsync } from "@/utils/i18n";
 export default {
     data() {
         return { langs: ["vi", "en"] };
