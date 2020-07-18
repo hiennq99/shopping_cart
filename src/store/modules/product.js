@@ -7,7 +7,7 @@ const getters = {};
 const mutations = {};
 
 const actions = {
-    async getProductList(ctx, params) {
+    async getProducts(ctx, params) {
         try {
             const response = await this.$axios.get(apis.productList, {
                 params
@@ -16,17 +16,7 @@ const actions = {
         } catch (error) {
             return { error };
         }
-    },
-    async getCategories(ctx, params) {
-        try {
-            const response = await this.$axios.get(apis.category, {
-                params
-            });
-            return response;
-        } catch (error) {
-            return { error };
-        }
-    },
+    }
 };
 
 export default {

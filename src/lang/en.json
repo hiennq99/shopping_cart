@@ -1,9 +1,19 @@
 {
     "hello": "Hello",
+    "empty": "No data",
     "nav": {
         "home": "Home",
         "product": "Product",
         "login": "Login",
-        "general": "General"
+        "general": "General",
+        "logout": "Logout"
+    },
+    "btn": {
+        "login": "Login",
+        "reset": "Reset"
+    },
+    "form": {
+        "email": "Email",
+        "password": "Password"
     }
 }

@@ -1,9 +1,19 @@
 {
     "hello": "Hê lâu",
+    "empty": "Dữ liệu trống",
     "nav": {
         "home": "Trang chủ",
         "product": "Sản phẩm",
         "login": "Đăng nhập",
-        "general": "Chung"
+        "general": "Chung",
+        "logout": "Đăng xuất"
+    },
+    "btn": {
+        "login": "Đăng nhập",
+        "reset": "Reset"
+    },
+    "form": {
+        "email": "Email",
+        "password": "Mật khẩu"
     }
 }
