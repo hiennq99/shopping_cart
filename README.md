@@ -24,13 +24,16 @@ json-server --watch db.json
 ## Build Setup
 
 ```bash
-# install dependencies
+# Cài đặt
 npm install
 
-# fake data
+# Chạy fake api
 npm run server
 
-# serve with hot reload at localhost:8080
+# Chạy fake api-auth
+npm run server-auth
+
+# Run project
 npm run dev
 
 # build for production with minification

@@ -1,5 +1,6 @@
 export default {
     productList: "/products",
-    category: "/categories",
-    login: '/login/google'
+    categoryList: "/categories",
+    loginWithGoogle: '/login/google',
+    login: '/auth/login'
 };

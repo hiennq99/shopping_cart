@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <div class="hero">
         <div class="columns">
             <div class="column is-one-quarter has-background-light">
                 <aside class="menu px-5">
@@ -21,10 +21,15 @@
                                 >{{ $t("nav.product") }}</router-link
                             >
                         </li>
-                        <li>
+                        <li v-if="!loggedIn">
                             <router-link :to="$i18nRoute({ name: 'Login' })">{{
                                 $t("nav.login")
                             }}</router-link>
+                        </li>
+                        <li v-if="loggedIn">
+                            <a href="javascript:;" @click="handleLogout">{{
+                                $t("nav.logout")
+                            }}</a>
                         </li>
                     </ul>
                 </aside>
@@ -40,9 +45,24 @@
 
 <script>
 import SelectLanguage from "@/components/SelectLanguage";
+import { mapGetters, mapActions } from "vuex";
 export default {
     components: {
         SelectLanguage
+    },
+    computed: {
+        ...mapGetters({
+            loggedIn: "authenticate/loggedIn"
+        })
+    },
+    methods: {
+        ...mapActions({
+            logout: "authenticate/logout"
+        }),
+        handleLogout() {
+            this.logout();
+            this.$router.push(this.$i18nRoute({ name: "Login" }));
+        }
     }
 };
 </script>

@@ -1,3 +1,3 @@
-const API_BASE_URL = "http://192.168.1.133:800/api";
+const API_BASE_URL = "http://localhost:3000/";
 
 export { API_BASE_URL };

@@ -11,22 +11,39 @@ const mockApi = () => {
             rating: Math.floor(Math.random() * 100 + 1) / 10
         },
         categories: {
-            id: Math.floor(Math.random()*20),
-            name: faker.random.words(),
+            id: Math.floor(Math.random() * 20),
+            name: faker.random.words()
+        },
+        users: {
+            id: faker.random.uuid(),
+            email: faker.internet.email(),
+            password: "123",
+            name: faker.name.findName()
         }
     };
 };
 const db = {
     products: [],
-    categories: []
+    categories: [],
+    users: [
+        {
+            id: faker.random.uuid(),
+            email: "tungdd98@gmail.com",
+            password: "123",
+            name: "tungdd"
+        }
+    ]
 };
 const getFakeData = (db, mockApi, numberRecord) => {
     Object.keys(db).forEach(api => {
-        db[api] = Array(numberRecord)
-            .fill(null)
-            .map(item => mockApi()[api]);
+        db[api] = [
+            ...db[api],
+            ...Array(numberRecord)
+                .fill(null)
+                .map(item => mockApi()[api])
+        ];
     });
 };
 
-getFakeData(db, mockApi, 20);
+getFakeData(db, mockApi, 5);
 console.log(JSON.stringify(db));
