@@ -1,45 +1,48 @@
 <template>
-    <div class="hero">
-        <div class="columns">
-            <div class="column is-one-quarter has-background-light">
-                <aside class="menu px-5">
-                    <div class="pt-5">
-                        <select-language></select-language>
-                    </div>
-                    <p class="menu-label">
-                        {{ $t("nav.general") }}
-                    </p>
-                    <ul class="menu-list">
-                        <li>
-                            <router-link :to="$i18nRoute({ name: 'Home' })">{{
-                                $t("nav.home")
-                            }}</router-link>
-                        </li>
-                        <li>
-                            <router-link
-                                :to="$i18nRoute({ name: 'ListProduct' })"
-                                >{{ $t("nav.product") }}</router-link
-                            >
-                        </li>
-                        <li v-if="!loggedIn">
-                            <router-link :to="$i18nRoute({ name: 'Login' })">{{
-                                $t("nav.login")
-                            }}</router-link>
-                        </li>
-                        <li v-if="loggedIn">
-                            <a href="javascript:;" @click="handleLogout">{{
-                                $t("nav.logout")
-                            }}</a>
-                        </li>
-                    </ul>
-                </aside>
+    <div class="sp-main">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <a class="navbar-brand" href="#">Logo</a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <router-link to="/" class="nav-link">
+                            {{ $t("nav.home") }}
+                        </router-link>
+                    </li>
+                    <li class="nav-item">
+                        <router-link to="/products" class="nav-link">
+                            {{ $t("nav.product") }}
+                        </router-link>
+                    </li>
+                    <li class="nav-item" v-if="!loggedIn">
+                        <router-link to="/login" class="nav-link">
+                            {{ $t("nav.login") }}
+                        </router-link>
+                    </li>
+                    <li class="nav-item" v-if="loggedIn">
+                        <a href="javascript:;" class="nav-link">
+                            {{ $t("nav.logout") }}
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <div class="column">
-                <section class="section">
-                    <router-view></router-view>
-                </section>
-            </div>
-        </div>
+            <select-language></select-language>
+        </nav>
+        <main class="container-fluid">
+            <router-view></router-view>
+        </main>
     </div>
 </template>
 

@@ -1,54 +1,43 @@
 <template>
-    <section class="columns">
-        <div class="column is-half is-offset-one-quarter">
-            <h1 class="is-size-4 mb-5">{{ $t("nav.login") }}</h1>
-            <div class="mb-5">
-                <div class="field">
-                    <label class="label">{{ $t("form.email") }}</label>
-                    <div class="control">
-                        <input
-                            class="input"
-                            type="text"
-                            placeholder="Email"
-                            v-model="form.email"
-                        />
-                    </div>
-                </div>
-                <div class="field">
-                    <label class="label">{{ $t("form.password") }}</label>
-                    <div class="control">
-                        <input
-                            class="input"
-                            type="password"
-                            placeholder="Password"
-                            v-model="form.password"
-                        />
-                    </div>
-                </div>
-                <div class="field is-grouped">
-                    <div class="control">
-                        <button class="button is-link" @click="hanleLogin">
-                            {{ $t("btn.login") }}
-                        </button>
-                    </div>
-                    <div class="control">
-                        <button
-                            class="button is-link is-light"
-                            @click="handleReset"
-                        >
-                            {{ $t("btn.reset") }}
-                        </button>
-                    </div>
-                </div>
+    <section>
+        <h1 class="display-4 my-5">{{ $t("nav.login") }}</h1>
+        <div class="mb-5" style="max-width: 400px">
+            <div class="form-group">
+                <label for="email">{{ $t("form.email") }}</label>
+                <input
+                    type="text"
+                    :placeholder="$t('placeholder.email')"
+                    v-model="form.email"
+                    class="form-control"
+                    id="email"
+                />
             </div>
-            <GoogleLogin
-                :params="params"
-                :onSuccess="onSuccess"
-                class="button is-danger is-rounded"
-            >
-                Login with Google
-            </GoogleLogin>
+            <div class="form-group">
+                <label for="password">{{ $t("form.password") }}</label>
+                <input
+                    type="password"
+                    :placeholder="$t('placeholder.password')"
+                    v-model="form.password"
+                    class="form-control"
+                    id="password"
+                />
+            </div>
+            <div class="my-2">
+                <button class="btn btn-info btn-sm" @click="hanleLogin">
+                    {{ $t("btn.login") }}
+                </button>
+                <button class="btn btn-danger btn-sm" @click="handleReset">
+                    {{ $t("btn.reset") }}
+                </button>
+            </div>
         </div>
+        <GoogleLogin
+            :params="params"
+            :onSuccess="onSuccess"
+            class="btn btn-outline-danger"
+        >
+            Login with Google
+        </GoogleLogin>
     </section>
 </template>
 
@@ -88,7 +77,7 @@ export default {
         },
         async hanleLogin() {
             const data = await this.login(this.form);
-            this.$router.push(this.$i18nRoute({ name: "Home" }));
+            this.$router.push("/");
         },
         handleReset() {
             this.form.email = "";

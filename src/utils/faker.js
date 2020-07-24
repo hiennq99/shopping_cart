@@ -3,22 +3,31 @@ const faker = require("faker");
 const mockApi = () => {
     return {
         products: {
-            id: faker.random.uuid(),
-            title: faker.random.words(),
-            decription: faker.random.words(),
-            content: faker.random.words(),
-            price: faker.random.number(),
-            rating: Math.floor(Math.random() * 100 + 1) / 10
+            record: {
+                id: faker.random.uuid(),
+                title: faker.random.words(),
+                decription: faker.random.words(),
+                content: faker.random.words(),
+                price: faker.random.number(),
+                rating: Math.floor(Math.random() * 100 + 1) / 10
+            },
+            number: 100
         },
         categories: {
-            id: Math.floor(Math.random() * 20),
-            name: faker.random.words()
+            record: {
+                id: Math.floor(Math.random() * 20),
+                name: faker.random.words()
+            },
+            number: 10
         },
         users: {
-            id: faker.random.uuid(),
-            email: faker.internet.email(),
-            password: "123",
-            name: faker.name.findName()
+            record: {
+                id: faker.random.uuid(),
+                email: faker.internet.email(),
+                password: "123",
+                name: faker.name.findName()
+            },
+            number: 5
         }
     };
 };
@@ -34,16 +43,16 @@ const db = {
         }
     ]
 };
-const getFakeData = (db, mockApi, numberRecord) => {
+const getFakeData = (db, mockApi) => {
     Object.keys(db).forEach(api => {
         db[api] = [
             ...db[api],
-            ...Array(numberRecord)
+            ...Array(mockApi()[api].number)
                 .fill(null)
-                .map(item => mockApi()[api])
+                .map(item => mockApi()[api].record)
         ];
     });
 };
 
-getFakeData(db, mockApi, 5);
+getFakeData(db, mockApi);
 console.log(JSON.stringify(db));

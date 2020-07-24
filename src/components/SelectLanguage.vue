@@ -1,38 +1,20 @@
 <template>
-    <div class="control mb-5">
-        <div class="select is-small">
-            <select :value="$i18n.locale" @input="switchLang">
-                <option
-                    v-for="(lang, i) in langs"
-                    :key="`Lang${i}`"
-                    :value="lang"
-                    >{{ lang }}
-                </option>
-            </select>
-        </div>
+    <div class="form-group">
+        <select v-model="$i18n.locale" class="form-control form-control-sm">
+            <option v-for="(lang, i) in langs" :key="`Lang${i}`" :value="lang"
+                >{{ lang }}
+            </option>
+        </select>
     </div>
 </template>
 
 <script>
 import { mapMutations } from "vuex";
-import { loadLanguageAsync } from "@/utils/i18n";
 export default {
     data() {
-        return { langs: ["vi", "en"] };
-    },
-    methods: {
-        ...mapMutations({
-            setLanguage: "display/setLanguage"
-        }),
-        switchLang(e) {
-            const lang = e.target.value;
-            if (this.$i18n.locale !== lang) {
-                const to = this.$router.resolve({ params: { lang } });
-                return loadLanguageAsync(lang).then(() => {
-                    this.$router.push(to.location);
-                });
-            }
-        }
+        return {
+            langs: process.env.SUPPORT_LANGUAGE.split(",")
+        };
     }
 };
 </script>

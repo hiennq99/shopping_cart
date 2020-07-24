@@ -15,5 +15,9 @@
     "form": {
         "email": "Email",
         "password": "Mật khẩu"
+    },
+    "placeholder": {
+        "email": "Nhập email",
+        "password": "Nhập mật khẩu"
     }
 }

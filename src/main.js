@@ -10,10 +10,9 @@ import axios from "@/utils/axios";
 Vue.prototype.$axios = axios;
 
 // i18n
-import { i18n, i18nRoute } from "@/utils/i18n";
-Vue.prototype.$i18nRoute = i18nRoute;
+import i18n from "@/utils/i18n";
 
-const app = new Vue({
+new Vue({
     el: "#app",
     router,
     store,
