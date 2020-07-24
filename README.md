@@ -1,4 +1,4 @@
-### PAGES
+### Pages
 
 1. [Home](http://anon.wp1.zootemplate.com/home-food/)
 2. [ListProduct](http://anon.wp1.zootemplate.com/shop/?sidebar=left)
@@ -9,19 +9,7 @@
 7. [Contact](http://anon.wp1.zootemplate.com/contact/)
 8. [About](http://anon.wp1.zootemplate.com/about/)
 
-### FAKE API
-
-node src/utils/faker.js > db.json
-
-### BUILD FAKE API
-
-json-server --watch db.json
-
-# shopping_cart
-
-> A Vue.js project
-
-## Build Setup
+### Setup
 
 ```bash
 # Cài đặt
@@ -31,7 +19,7 @@ npm install
 npm run server
 
 # Chạy fake api-auth
-npm run server-auth
+npm run start-auth
 
 # Run project
 npm run dev
@@ -42,5 +30,3 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
