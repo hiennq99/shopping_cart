@@ -32,7 +32,11 @@
                         </router-link>
                     </li>
                     <li class="nav-item" v-if="loggedIn">
-                        <a href="javascript:;" class="nav-link">
+                        <a
+                            href="javascript:;"
+                            class="nav-link"
+                            @click="handleLogout"
+                        >
                             {{ $t("nav.logout") }}
                         </a>
                     </li>
@@ -64,7 +68,7 @@ export default {
         }),
         handleLogout() {
             this.logout();
-            this.$router.push(this.$i18nRoute({ name: "Login" }));
+            this.$router.push("/login");
         }
     }
 };
