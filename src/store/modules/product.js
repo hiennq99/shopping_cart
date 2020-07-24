@@ -7,10 +7,13 @@ const getters = {};
 const mutations = {};
 
 const actions = {
-    async getProducts(ctx, params) {
+    async getProducts(ctx, query) {
         try {
             const response = await this.$axios.get(apis.productList, {
-                params
+                params: {
+                    ...query,
+                    _page: query._page || 1
+                }
             });
             return response;
         } catch (error) {
