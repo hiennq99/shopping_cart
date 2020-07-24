@@ -10,9 +10,14 @@ const httpClient = axios.create({
         "Content-type": "application/json; charset=utf-8"
     }
 });
-httpClient.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+httpClient.defaults.headers.post["Content-Type"] =
+    "application/x-www-form-urlencoded";
 
 const loadFunction = config => {
+    const accessToken = store.state.authenticate.accessToken;
+    if (accessToken) {
+        config.headers["Authorization"] = "Bearer " + accessToken;
+    }
     store.commit("display/setLoading", true);
     return config;
 };

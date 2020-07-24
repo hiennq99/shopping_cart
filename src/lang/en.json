@@ -15,5 +15,9 @@
     "form": {
         "email": "Email",
         "password": "Password"
+    },
+    "placeholder": {
+        "email": "Enter email",
+        "password": "Enter password"
     }
 }

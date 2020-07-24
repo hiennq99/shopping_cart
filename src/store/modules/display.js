@@ -1,7 +1,6 @@
-import app from "@/main";
-
 const state = {
-    loading: false
+    loading: false,
+    position: window.pageYOffset || 0
 };
 
 const getters = {};
@@ -9,6 +8,9 @@ const getters = {};
 const mutations = {
     setLoading(state, data) {
         state.loading = data;
+    },
+    setPosition(state, data) {
+        state.position = data;
     }
 };
 
