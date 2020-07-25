@@ -6,7 +6,11 @@
         "product": "Sản phẩm",
         "login": "Đăng nhập",
         "general": "Chung",
-        "logout": "Đăng xuất"
+        "logout": "Đăng xuất",
+        "food": "Đồ ăn",
+        "book": "Đặt bàn",
+        "flower": "Hoa",
+        "medicine": "Thuốc"
     },
     "btn": {
         "login": "Đăng nhập",
