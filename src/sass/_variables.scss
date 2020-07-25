@@ -19,5 +19,23 @@ $fonts: (
     ),
     16: (
         $font * 1
+    ),
+    18: (
+        $font * 1.125
+    ),
+    20: (
+        $font * 1.25
+    )
+);
+$font-size-base: map-get(
+    $map: $fonts,
+    $key: 14
+);
+
+// space
+$spacer: 1rem;
+$spacers: (
+    80: (
+        $spacer * 5
     )
 );

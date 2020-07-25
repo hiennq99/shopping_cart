@@ -30,13 +30,13 @@ const routes = [
                 meta: {
                     requiresVisitor: true
                 }
-            },
-            {
-                path: "/404",
-                name: "not-found",
-                component: () => import("@/pages/404")
             }
         ]
+    },
+    {
+        path: "*",
+        name: "not-found",
+        component: () => import("@/pages/404")
     }
 ];
 const router = new Router({
