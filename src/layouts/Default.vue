@@ -59,7 +59,7 @@
                 </nav>
             </div>
         </header>
-        <main class="container-fluid">
+        <main>
             <router-view></router-view>
         </main>
     </div>
@@ -93,5 +93,9 @@ export default {
 .slide {
     transition: transform 0.5s ease;
     transform: translateX(300px);
+}
+.container-fluid{
+    margin-left: -15px;
+    margin-right: -15px;
 }
 </style>

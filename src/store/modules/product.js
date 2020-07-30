@@ -12,7 +12,7 @@ const actions = {
             const response = await this.$axios.get(apis.productList, {
                 params: {
                     ...query,
-                    _page: query._page || 1
+                    // _page: query._page || 1
                 }
             });
             return response;

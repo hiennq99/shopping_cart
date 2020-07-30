@@ -1,41 +1,27 @@
 @charset "utf-8";
-
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
-
 // Font family
-$font-family: "Nunito", sans-serif;
-
+$font-family: "Nunito",
+sans-serif;
 // Font size
 $font: 1rem;
-$fonts: (
-    10: (
-        $font * 0.625
-    ),
-    12: (
-        $font * 0.75
-    ),
-    14: (
-        $font * 0.875
-    ),
-    16: (
-        $font * 1
-    ),
-    18: (
-        $font * 1.125
-    ),
-    20: (
-        $font * 1.25
-    )
-);
-$font-size-base: map-get(
-    $map: $fonts,
-    $key: 14
-);
-
+$fonts: ( 10: ( $font * 0.625),
+12: ( $font * 0.75),
+14: ( $font * 0.875),
+16: ( $font * 1),
+18: ( $font * 1.125),
+20: ( $font * 1.25),
+32: ( $font * 2));
+$font-size-base: map-get( $map: $fonts,
+$key: 14);
 // space
 $spacer: 1rem;
-$spacers: (
-    80: (
-        $spacer * 5
-    )
-);
+$spacers: ( 10: ( $spacer * 0.625),
+12: ( $spacer * 0.75),
+14: ( $spacer * 0.875),
+16: ( $spacer * 1),
+18: ( $spacer * 1.125),
+20: ( $spacer * 1.25),
+32: ( $spacer * 2),
+80: ( $spacer * 5),
+160: ( $spacer * 10));
