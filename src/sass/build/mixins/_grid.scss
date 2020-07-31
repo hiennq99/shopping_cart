@@ -1,0 +1,33 @@
+// Tạo thuộc tính cho row
+@mixin make-row($gap: $grid-gap-width) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -$gap / 2;
+    margin-right: -$gap / 2;
+}
+
+// Tạo thuộc tính mặc định cho col
+@mixin make-col-base($gap: $grid-gap-width) {
+    position: relative;
+    width: 100%;
+    padding-left: $gap / 2;
+    padding-right: $gap / 2;
+}
+
+// Tạo col-auto
+@mixin make-col-auto {
+    flex-grow: 1;
+    flex-basis: 0;
+    min-width: 0;
+    max-width: 100%;
+}
+
+// Tạo col theo màn
+@mixin make-grid-columns($columns: $grid-columns, $breakpoints: $grid-breakpoints) {
+    @each $breakpoint in map-keys($breakpoints) {
+        $prefix: breakpoint-prefix($breakpoint, $breakpoints);
+        @for $i from 1 through $columns {
+            
+        }
+    }
+}

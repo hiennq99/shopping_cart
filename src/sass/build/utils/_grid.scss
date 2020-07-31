@@ -1,0 +1,12 @@
+@mixin initRow($name) {
+    @include make-class($name) {
+        @include make-row();
+    }
+}
+
+@mixin initColAuto($name) {
+    @include make-class($name) {
+        @include make-col-base();
+        @include make-col-auto();
+    }
+}

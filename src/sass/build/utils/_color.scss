@@ -1,0 +1,21 @@
+@mixin initBackground($name) {
+    @include make-class($name) {
+        background-color: $white;
+        @each $color, $value in $theme-colors {
+            @include make-element($color) {
+                @include render-bg-color($value);
+            }
+        }
+    }
+}
+
+@mixin initColor($name) {
+    @include make-class($name) {
+        color: $black;
+        @each $color, $value in $theme-colors {
+            @include make-element($color) {
+                @include render-text-color($value);
+            }
+        }
+    }
+}

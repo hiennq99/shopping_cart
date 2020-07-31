@@ -1,0 +1,12 @@
+@mixin initContainer($name) {
+    @include make-class($name) {
+        @include render-container();
+        @include render-container-maxwidth();
+    }
+}
+
+@mixin initContainerFluid($name) {
+    @include make-class($name) {
+        @include render-container();
+    }
+}
