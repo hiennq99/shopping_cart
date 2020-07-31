@@ -1,4 +1,7 @@
 // customs
+html{
+    scroll-behavior : smooth;
+}
 @import "variables";
 @import "~bootstrap/scss/bootstrap";
 @import "mixins";
