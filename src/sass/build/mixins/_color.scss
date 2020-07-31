@@ -1,0 +1,9 @@
+// Background color
+@mixin render-bg-color($value) {
+    background-color: $value !important;
+}
+
+// Color
+@mixin render-text-color($value) {
+    color: $value !important;
+}

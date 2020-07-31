@@ -1,0 +1,20 @@
+// Tạo element BEM
+@mixin make-element($name) {
+    @at-root #{&}__#{$name} {
+        @content;
+    }
+}
+
+// Tạo modifier BEM
+@mixin make-modifier($name) {
+    @at-root #{&}--#{$name} {
+        @content;
+    }
+}
+
+// Tạo class
+@mixin make-class($name) {
+    @at-root #{&}-#{$name} {
+        @content;
+    }
+}

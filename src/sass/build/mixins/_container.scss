@@ -1,0 +1,38 @@
+// Tìm giá trị min của breakpoint
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+    $min: map-get($breakpoints, $name);
+    @return if($min != 0, $min, null);
+}
+
+// Lấy tiền tố
+@function breakpoint-prefix($name, $breakpoints: $grid-breakpoints) {
+    @return if(breakpoint-min($name, $breakpoints), "", "-#{$name}");
+}
+
+// Tạo media query (min-width)
+@mixin make-media-query($name, $breakpoints: $grid-breakpoints) {
+    $min: breakpoint-min($name, $breakpoints);
+    @if $min {
+        @media (min-width: $min) {
+            @content;
+        }
+    }
+}
+
+// Tạo thuộc tính container
+@mixin render-container($gap: $grid-gap-width) {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $gap / 2;
+    padding-right: $gap / 2;
+}
+
+// Tạo thuộc tính max-width cho container
+@mixin render-container-maxwidth() {
+    @each $breakpoint, $container-max-width in $container-max-widths {
+        @include make-media-query($breakpoint, $grid-breakpoints) {
+            max-width: $container-max-width;
+        }
+    }
+}
